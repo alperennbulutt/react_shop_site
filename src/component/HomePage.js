@@ -1,17 +1,17 @@
 import React from "react";
 import Body from "./Body";
-import Title from "./Title";
+import { Col, Container } from "reactstrap";
 class HomePage extends React.Component {
   state = {
     baslik: "Başlık",
   };
   render() {
     return (
-      <div>
-        <Title title={this.state.baslik} />
-
-        <Body/>
-      </div>
+      <Container>
+        <Col>
+          <Body />
+        </Col>
+      </Container>
     );
   }
 }

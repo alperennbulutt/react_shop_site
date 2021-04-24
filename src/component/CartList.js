@@ -1,3 +1,4 @@
+import { Button } from "bootstrap";
 import React, { Component } from "react";
 import { Table } from "reactstrap";
 
@@ -27,6 +28,13 @@ export default class CartList extends Component {
               <td>{cartItem.product.unitPrice}</td>
               <td>{cartItem.product.unitsInStock}</td>
               <td>{cartItem.quantity}</td>
+              <button
+                onClick={() => this.props.removeFromCart(cartItem.product)}
+                type="button"
+                class="btn btn-outline-danger"
+              >
+                Sil
+              </button>
             </tr>
           ))}
         </tbody>

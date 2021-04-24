@@ -14,6 +14,7 @@ const Navi = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+  console.log("asdasdasd", props.cart);
 
   return (
     <div>
@@ -23,7 +24,7 @@ const Navi = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Kategoriler</NavLink>
+              <NavLink href="/Categories/">Kişisel</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="https://github.com/alperennbulutt" target="blank">
@@ -31,7 +32,10 @@ const Navi = (props) => {
               </NavLink>
             </NavItem>
 
-            <CartSummary removeFromCart={props.removeFromCart} cart={props.cart} />
+            <CartSummary
+              removeFromCart={props.removeFromCart}
+              cart={props.cart}
+            />
           </Nav>
         </Collapse>
       </Navbar>

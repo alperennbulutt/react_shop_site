@@ -16,9 +16,9 @@ export default class Products extends Component {
     };
   }
 
-  componentDidMount = () => {
-    // this.getProducts();
-  };
+  // componentDidMount = () => {
+  // this.getProducts();
+  // };
 
   render() {
     this.handleEvent();

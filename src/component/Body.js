@@ -7,6 +7,7 @@ import { Route, Switch } from "react-router";
 import CartList from "./CartList";
 
 import NotFound from "./NotFound";
+import Categories from "./Categories";
 
 //api dosyasına girip başta api'yi çalıştır sonrasında npm start yap -->  json-server --watch db.json
 export class Body extends React.Component {
@@ -41,6 +42,8 @@ export class Body extends React.Component {
   removeFromCart = (product) => {
     let newCart = this.state.cart.filter((c) => c.product.id !== product.id);
     this.setState({ cart: newCart });
+    //silinince gelen uyarı
+    alertify.error(product.productName + " Silindi");
   };
 
   getProducts = (category) => {
@@ -107,6 +110,18 @@ export class Body extends React.Component {
                 />
               )}
             ></Route>
+            <Route
+              exact
+              path="/categories"
+              render={(props) => (
+                <Categories
+                  //propsların bir tane kopyasını al o kopyayı gönder
+                  {...props}
+                  cart={this.state.cart}
+                />
+              )}
+            ></Route>
+
             <Route component={NotFound}></Route>
           </Switch>
         </Col>

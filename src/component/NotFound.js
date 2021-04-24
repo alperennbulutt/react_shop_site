@@ -12,12 +12,10 @@ class NotFound extends Component {
             />
           </aside>
           <main>
-            <h1>Sorry!</h1>
+            <h1>Oppss!</h1>
             <p>
-              Either you aren't cool enough to visit this page or it doesn't
-              exist <em>. . . like your social life.</em>
+               <em>Sayfa Bulunamadı...</em>
             </p>
-            <button>You can go now!</button>
           </main>
         </div>
       </div>
